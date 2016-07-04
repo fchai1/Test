@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+var app=angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,6 +9,12 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+app.controller('View1Ctrl', function($scope) {
+    $scope.testname= "test name";
 
-}]);
+    $scope.printscope=function(){
+            console.log($scope);
+            return "test function";
+        };
+
+});
