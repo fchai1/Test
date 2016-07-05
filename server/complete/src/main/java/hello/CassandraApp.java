@@ -22,8 +22,7 @@ public class CassandraApp {
 
     public void testCassandra() {
 
-        try {
-            cluster = Cluster.builder().addContactPoints(InetAddress.getLocalHost()).build();
+            cluster = Cluster.builder().addContactPoints("127.0.0.1").build();
 
             session = cluster.connect("mykeyspace");
 
@@ -37,10 +36,6 @@ public class CassandraApp {
             LOG.info(cassandraOps.queryForObject(s, Person.class).getId());
 
             cassandraOps.truncate("person");
-
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
 
     }
 }
