@@ -13,6 +13,8 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
+        CassandraApp cassandraApp = new CassandraApp();
+        cassandraApp.testCassandra();
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }

@@ -28,6 +28,11 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-cassandra</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -48,6 +53,11 @@
         <repository>
             <id>spring-releases</id>
             <url>https://repo.spring.io/libs-release</url>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>http://repo.spring.io/libs-milestone</url>
         </repository>
     </repositories>
     <pluginRepositories>
